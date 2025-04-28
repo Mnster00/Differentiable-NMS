@@ -13,7 +13,7 @@ A PyTorch implementation of "End-to-End Fabric Defect Detection via Differentiab
 - **Entropy-Constrained Refinement**: Optimizes proposal masks through principled uncertainty modeling
 
 
-### Basic Usage of DNMS Module
+### Basic Usage
 
 ```python
 from differentiable_nms import DifferentiableNMS
@@ -30,7 +30,9 @@ dnms = DifferentiableNMS(
 filtered_scores, filtered_boxes, filtered_features, filtered_masks, soft_assignment = dnms(
     scores, boxes, features, masks
 )
+```
 
+```python
 # Entropy-constrained refinement module
 
 from entropy_constrained_refinement import EntropyConstrainedRefinement
@@ -42,7 +44,7 @@ refinement = EntropyConstrainedRefinement(
 )
 
 refined_probs = refinement(scores, quality_scores, masks)
-
+```
 
 ## Requirements
 
